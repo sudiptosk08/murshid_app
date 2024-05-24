@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:murshid_app/app/screen/Navigation/controller/navigation_controller.dart';
-import 'package:murshid_app/app/screen/home_page/view/home_page.dart';
+import 'package:murshid_app/app/screen/navigation/controller/navigation_controller.dart';
+import 'package:murshid_app/app/screen/home/view/home_page.dart';
+import 'package:murshid_app/app/screen/settings/view/settings_page.dart';
+import 'package:murshid_app/app/screen/support/view/support_page.dart';
 import 'package:murshid_app/utils/colors/app_colors.dart';
 import 'package:murshid_app/utils/text_styles/k_text_styles.dart';
 
@@ -45,12 +46,12 @@ class NavigationPage extends GetView<NavigationController> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.person,
+                Icons.support_agent,
                 color: controller.selectedIndex.value == 3
                     ? KColors.primaryColor.withOpacity(0.75)
                     : KColors.mute.withOpacity(0.35),
               ),
-              label: "Profile",
+              label: "Support",
             ),
           ],
           type: BottomNavigationBarType.fixed,
@@ -74,12 +75,8 @@ class NavigationPage extends GetView<NavigationController> {
             const Center(
               child: Text("User "),
             ),
-            const Center(
-              child: Text("Settings "),
-            ),
-            const Center(
-              child: Text("Profile "),
-            ),
+            const SettingPage(),
+            SupportPage(),
           ],
         ),
       ),

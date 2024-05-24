@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:murshid_app/utils/colors/app_colors.dart';
+import 'package:murshid_app/utils/sizes/k_sizes.dart';
 import 'package:murshid_app/utils/text_styles/k_text_styles.dart';
 
 class KViewCard extends StatefulWidget {
   String count;
   String? ans;
-  String? image;
+  String? img;
   final String? question;
   bool? useImage;
 
@@ -15,7 +16,7 @@ class KViewCard extends StatefulWidget {
     required this.count,
     required this.ans,
     required this.question,
-    this.image,
+    this.img,
     this.useImage,
   });
 
@@ -63,7 +64,7 @@ class _KViewCardState extends State<KViewCard> {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: KColors.white,
+                  color: KColors.tranparent.withOpacity(0.2),
                   border: Border.all(
                       width: 1, color: KColors.mute.withOpacity(0.2))),
               child: Column(
@@ -76,9 +77,10 @@ class _KViewCardState extends State<KViewCard> {
                         children: [
                           widget.useImage == true
                               ? Image.asset(
-                                  "${widget.image}",
-                                  width: 28,
-                                  height: 28,
+                                  "${widget.img}",
+                                  width: 35,
+                                  height: 35,
+                                  color: KColors.primaryColor,
                                 )
                               : Container(),
                           SizedBox(
@@ -87,26 +89,30 @@ class _KViewCardState extends State<KViewCard> {
                           Expanded(
                             child: Text(
                               "${widget.question}",
-                              style: KTextStyles.bodyText3,
+                              style: KTextStyles.bodyText1
+                                  .copyWith(color: KColors.white),
                               maxLines: 6,
                             ),
                           ),
                           secondaryIndex == 0
-                              ? Icon(
+                              ? const Icon(
                                   Icons.expand_less,
                                   size: 30,
-                                  color: KColors.mute.withOpacity(0.65),
+                                  color: KColors.primaryColor,
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.expand_more,
                                   size: 30,
-                                  color: KColors.mute.withOpacity(0.65),
+                                  color: KColors.primaryColor,
                                 )
                         ]),
                   ),
                   if (secondaryIndex == 0) const SizedBox(height: 7),
                   if (secondaryIndex == 0)
-                    SizedBox(
+                    Container(
+                      padding: EdgeInsets.all(KSizes.hGapMedium),
+                      decoration:
+                          BoxDecoration(color: KColors.mute.withOpacity(0.2)),
                       width: double.infinity,
                       child: Row(
                         children: [
@@ -117,8 +123,8 @@ class _KViewCardState extends State<KViewCard> {
                             child: Text(
                               widget.ans!,
                               textAlign: TextAlign.justify,
-                              style: KTextStyles.bodyText3
-                                  .copyWith(color: KColors.mute),
+                              style: KTextStyles.bodyText1
+                                  .copyWith(color: KColors.white),
                               maxLines: 6,
                             ),
                           ),

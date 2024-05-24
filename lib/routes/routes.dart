@@ -1,14 +1,20 @@
 import 'package:get/get.dart';
-import 'package:murshid_app/app/screen/Navigation/bindings/navigation_bindings.dart';
-import 'package:murshid_app/app/screen/Navigation/view/navigation_page.dart';
+import 'package:murshid_app/app/screen/navigation/bindings/navigation_bindings.dart';
+import 'package:murshid_app/app/screen/navigation/view/navigation_page.dart';
 import 'package:murshid_app/app/screen/auth/binding/auth_binding.dart';
 import 'package:murshid_app/app/screen/auth/view/auth_page.dart';
-import 'package:murshid_app/app/screen/home_page/binding/home_binding.dart';
-import 'package:murshid_app/app/screen/home_page/view/home_page.dart';
-import 'package:murshid_app/app/screen/module/hotel/binding/hotel_binding.dart';
-import 'package:murshid_app/app/screen/module/hotel/view/hotel_page.dart';
+import 'package:murshid_app/app/screen/home/binding/home_binding.dart';
+import 'package:murshid_app/app/screen/home/view/home_page.dart';
+import 'package:murshid_app/app/screen/hotel/binding/hotel_binding.dart';
+import 'package:murshid_app/app/screen/hotel/view/hotel_page.dart';
+import 'package:murshid_app/app/screen/profile/view/profile_page.dart';
+import 'package:murshid_app/app/screen/profile/view/update_profile_page.dart';
+import 'package:murshid_app/app/screen/settings/binding/settings_binding.dart';
+import 'package:murshid_app/app/screen/settings/view/settings_page.dart';
 import 'package:murshid_app/app/screen/splash_page/binding/splash_binding.dart';
 import 'package:murshid_app/app/screen/splash_page/view/splash_page.dart';
+import 'package:murshid_app/app/screen/support/binding/support_binding.dart';
+import 'package:murshid_app/app/screen/support/view/support_page.dart';
 
 class Routes {
   static const splashPage = '/splashPage';
@@ -16,6 +22,12 @@ class Routes {
   static const navigationPage = '/navigationPage';
   static const homePage = '/homePage';
   static const hotelPage = '/hotelPage';
+  static const settingPage = '/settingPage';
+  static const supportPage = '/supportPage';
+  static const profilePage = '/profilepage';
+  static const updateProfilePage = '/updateProfilePage';
+
+
   static var routeList = [
     GetPage(
       name: navigationPage,
@@ -23,6 +35,7 @@ class Routes {
       bindings: [
         NavigationBinding(),
         HomeBinding(),
+        SettingBinding(),
       ],
     ),
     GetPage(
@@ -35,6 +48,16 @@ class Routes {
       page: () => const SplashPage(),
       binding: SplashBinding(),
     ),
+     GetPage(
+      name: profilePage,
+      page: () => const ProfilePage(),
+      // binding: SplashBinding(),
+    ),
+     GetPage(
+      name: updateProfilePage,
+      page: () => const UpdateProfilePage(),
+      // binding: SplashBinding(),
+    ),
     GetPage(
       name: homePage,
       page: () => const HomePage(),
@@ -44,6 +67,16 @@ class Routes {
       name: hotelPage,
       page: () => const HotelPage(),
       binding: HotelBinding(),
+    ),
+    GetPage(
+      name: settingPage,
+      page: () => const SettingPage(),
+      // binding: SettingBinding(),
+    ),
+    GetPage(
+      name: supportPage,
+      page: () => SupportPage(),
+      binding: SupportBinding(),
     ),
   ];
 }

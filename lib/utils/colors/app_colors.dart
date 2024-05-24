@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class KColors {
   static const Color background = Color(0xff003C34);
+  // static const Color background = Color(0xff425C5A);
   static const Color primaryColor = Color(0xffC9B985);
+  // static const Color primaryColor = Color(0xffFFCEA2);
+
   static const Color white = Color(0xffF7F8F8);
   static const Color black = Color(0xff242424);
   static const Color mute = Color(0xffAFAEB1);

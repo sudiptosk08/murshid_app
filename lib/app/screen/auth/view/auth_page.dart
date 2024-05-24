@@ -37,6 +37,7 @@ class AuthPage extends GetView<AuthController> {
                       },
                       child: Container(
                         alignment: Alignment.center,
+                        height: 45.h,
                         padding: EdgeInsets.all(KSizes.hGapMedium),
                         decoration: BoxDecoration(
                             color: KColors.tranparent.withOpacity(0.2),
@@ -59,6 +60,7 @@ class AuthPage extends GetView<AuthController> {
                         controller.selectedTab.value = 2;
                       },
                       child: Container(
+                        height: 45.h,
                         alignment: Alignment.center,
                         padding: EdgeInsets.all(KSizes.hGapMedium),
                         decoration: BoxDecoration(

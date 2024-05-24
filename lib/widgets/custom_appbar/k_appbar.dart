@@ -25,7 +25,7 @@ class KAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.backgroundColor,
     this.centerTitle,
     this.titleTextStyle,
-    this.topBarHeight = 65,
+    this.topBarHeight = 55,
   });
 
   @override
@@ -35,7 +35,7 @@ class KAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: title,
       centerTitle: centerTitle,
       actions: actions,
-      leadingWidth: 0,
+      leadingWidth: 60,
       bottom: bottom,
       elevation: elevation,
       titleTextStyle: titleTextStyle,

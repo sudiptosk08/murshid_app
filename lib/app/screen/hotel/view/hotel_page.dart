@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:murshid_app/app/screen/module/hotel/widget/booking_card.dart';
+import 'package:murshid_app/app/screen/hotel/widget/booking_card.dart';
+import 'package:murshid_app/utils/colors/app_colors.dart';
 import 'package:murshid_app/utils/sizes/k_sizes.dart';
+import 'package:murshid_app/utils/text_styles/k_text_styles.dart';
 import 'package:murshid_app/widgets/custom_appbar/k_appbar.dart';
 
 class HotelPage extends StatelessWidget {
@@ -13,8 +15,8 @@ class HotelPage extends StatelessWidget {
       appBar: KAppBar(
         title: Text(
           "Hotel",
+          style: KTextStyles.subtitle1.copyWith(color: KColors.white),
         ),
-        
       ),
       body: ListView.separated(
         padding: EdgeInsets.symmetric(

@@ -91,7 +91,7 @@ class _KTextFieldState extends State<KTextField> {
             children: [
               Text(widget.labelText ?? '',
                   textAlign: TextAlign.center,
-                  style: KTextStyles.bodyText2.copyWith(
+                  style: KTextStyles.bodyText1.copyWith(
                       color: widget.laveltextColor ??
                           KColors.mute.withOpacity(0.7))),
               if (widget.requiredField!)

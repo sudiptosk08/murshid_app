@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:murshid_app/app/screen/home_page/controller/home_controller.dart';
+import 'package:murshid_app/app/screen/home/controller/home_controller.dart';
 import 'package:murshid_app/utils/assets/k_images.dart';
 import 'package:murshid_app/utils/colors/app_colors.dart';
 import 'package:murshid_app/utils/sizes/k_sizes.dart';
@@ -17,6 +17,7 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: KAppBar(
+          topBarHeight: 65,
           title: Row(
             children: [
               CircleAvatar(
@@ -50,12 +51,12 @@ class HomePage extends GetView<HomeController> {
             Padding(
               padding: EdgeInsets.only(right: KSizes.hGapLarge),
               child: CircleAvatar(
-                backgroundColor: KColors.primaryColor,
+                backgroundColor: KColors.tranparent.withOpacity(0.2),
                 radius: 25.w,
                 child: const Icon(
                   Icons.notifications_active,
                   size: 27,
-                  color: KColors.background,
+                  color: KColors.primaryColor,
                 ),
               ),
             ),
@@ -80,8 +81,8 @@ class HomePage extends GetView<HomeController> {
                   children: [
                     Text(
                       'Location Share',
-                      style:
-                          KTextStyles.subtitle1.copyWith(color: KColors.white),
+                      style: KTextStyles.subtitle1
+                          .copyWith(color: KColors.primaryColor),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(

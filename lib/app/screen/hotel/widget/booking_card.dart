@@ -71,18 +71,18 @@ class BookingCard extends StatelessWidget {
                                 padding: EdgeInsets.all(KSizes.hGapSmall),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5.r),
-                                  color: KColors.primaryColor.withOpacity(0.6),
+                                  color: KColors.mute.withOpacity(0.2),
                                 ),
                                 child: index == 2 || index == 4
                                     ? Text(
                                         'Mokka',
-                                        style: KTextStyles.bodyText2.copyWith(
-                                            color: KColors.background),
+                                        style: KTextStyles.bodyText2
+                                            .copyWith(color: KColors.white),
                                       )
                                     : Text(
                                         'Madinah',
-                                        style: KTextStyles.bodyText2.copyWith(
-                                            color: KColors.background),
+                                        style: KTextStyles.bodyText2
+                                            .copyWith(color: KColors.white),
                                       ),
                               ),
                             ],
@@ -101,7 +101,7 @@ class BookingCard extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.calendar_month,
                                 color: KColors.primaryColor,
                               ),
@@ -122,7 +122,7 @@ class BookingCard extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.call,
                                 color: KColors.primaryColor,
                               ),
@@ -147,14 +147,34 @@ class BookingCard extends StatelessWidget {
               SizedBox(
                 height: KSizes.vGapSmall,
               ),
-              CustomButton(
-                btnColor: KColors.primaryColor.withOpacity(0.6),
-                iconData: Icons.location_pin,
-                iconColor: KColors.red,
-                onTap: () {},
-                btnText: "Direction",
-                iconSize: 28,
-                textColor: KColors.background,
+              Row(
+                children: [
+                  Expanded(
+                    child: CustomButton(
+                      btnColor: KColors.mute.withOpacity(0.2),
+                      iconData: Icons.view_timeline,
+                      iconColor: KColors.white,
+                      onTap: () {},
+                      btnText: "View Details",
+                      iconSize: 25,
+                      textColor: KColors.white,
+                    ),
+                  ),
+                  SizedBox(
+                    width: KSizes.hGapMedium,
+                  ),
+                  Expanded(
+                    child: CustomButton(
+                      btnColor: KColors.mute.withOpacity(0.2),
+                      iconData: Icons.location_history,
+                      iconColor: KColors.white,
+                      onTap: () {},
+                      btnText: "View Direction",
+                      iconSize: 26,
+                      textColor: KColors.white,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

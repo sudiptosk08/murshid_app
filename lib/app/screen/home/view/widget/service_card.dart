@@ -120,8 +120,8 @@ class ServiceCard extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           softWrap: true,
                           style: KTextStyles.bodyText2.copyWith(
-                            fontWeight: FontWeight.normal,
-                          ),
+                              fontWeight: FontWeight.normal,
+                              color: KColors.white),
                         ),
                       ),
                       SizedBox(
