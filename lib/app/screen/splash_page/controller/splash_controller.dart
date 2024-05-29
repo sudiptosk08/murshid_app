@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:murshid_app/local_storage/local_storage.dart';
 import 'package:murshid_app/routes/routes.dart';
 import 'package:murshid_app/utils/colors/app_colors.dart';
 
 class SplashController extends GetxController {
   @override
   void onInit() {
-    print("ami bujlam na bepar");
     navigateToNextPage();
     super.onInit();
   }
@@ -18,7 +18,9 @@ class SplashController extends GetxController {
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        Get.toNamed(Routes.authPage);
+        LocalStorage.getApiToken() != null
+            ? Get.offAllNamed(Routes.navigationPage)
+            : Get.offAllNamed(Routes.authPage);
       },
     );
   }

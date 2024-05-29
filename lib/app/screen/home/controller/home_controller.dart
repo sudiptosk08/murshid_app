@@ -1,17 +1,23 @@
 import 'package:get/get.dart';
 import 'package:murshid_app/app/screen/home/view/home_page.dart';
+import 'package:murshid_app/local_storage/local_storage.dart';
 import 'package:murshid_app/routes/routes.dart';
 import 'package:murshid_app/utils/assets/k_images.dart';
+
+int userId = int.parse(LocalStorage.getUserID().toString());
 
 class HomeController extends GetxController {
   @override
   void onInit() {
     specialBanners;
     categories;
+
     super.onInit();
   }
 
   RxBool locationShare = false.obs;
+  String? userName = LocalStorage.getUserName();
+
   List<String> specialBanners = [
     KImages.banner1,
     KImages.banner2,
@@ -44,7 +50,7 @@ class HomeController extends GetxController {
       name: "Hotel",
       icon: KImages.hotel,
       tap: () {
-        Get.toNamed(Routes.hotelPage);
+        Get.toNamed(Routes.hotelPage, arguments: {"id": userId});
       },
     ),
     CategoryColumn(

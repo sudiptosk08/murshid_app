@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:murshid_app/app/screen/map_location/binding/map_location_binding.dart';
+import 'package:murshid_app/app/screen/map_location/view/map_location_page.dart';
 import 'package:murshid_app/app/screen/navigation/bindings/navigation_bindings.dart';
 import 'package:murshid_app/app/screen/navigation/view/navigation_page.dart';
 import 'package:murshid_app/app/screen/auth/binding/auth_binding.dart';
@@ -26,7 +28,7 @@ class Routes {
   static const supportPage = '/supportPage';
   static const profilePage = '/profilepage';
   static const updateProfilePage = '/updateProfilePage';
-
+  static const mapLocationPage = '/mapLocationPage';
 
   static var routeList = [
     GetPage(
@@ -48,12 +50,12 @@ class Routes {
       page: () => const SplashPage(),
       binding: SplashBinding(),
     ),
-     GetPage(
+    GetPage(
       name: profilePage,
       page: () => const ProfilePage(),
       // binding: SplashBinding(),
     ),
-     GetPage(
+    GetPage(
       name: updateProfilePage,
       page: () => const UpdateProfilePage(),
       // binding: SplashBinding(),
@@ -77,6 +79,11 @@ class Routes {
       name: supportPage,
       page: () => SupportPage(),
       binding: SupportBinding(),
+    ),
+    GetPage(
+      name: mapLocationPage,
+      page: () => const MapLocationPage(),
+      binding: MapLocationBinding(),
     ),
   ];
 }

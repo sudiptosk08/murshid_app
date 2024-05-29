@@ -3,6 +3,8 @@
         android:label="murshid_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyC9b1yP0m1rFlifATYVGaZr8A_7leu8ltE"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

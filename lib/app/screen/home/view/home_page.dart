@@ -37,7 +37,7 @@ class HomePage extends GetView<HomeController> {
                     style: KTextStyles.bodyText3.copyWith(color: KColors.mute),
                   ),
                   Text(
-                    "Roman Sayed",
+                   "${controller.userName}",
                     style: KTextStyles.subtitle1.copyWith(
                       color: KColors.white,
                     ),
@@ -153,7 +153,7 @@ class HomePage extends GetView<HomeController> {
                   child: GridView.builder(
                     shrinkWrap: true,
                     clipBehavior: Clip.hardEdge,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: EdgeInsets.symmetric(
                       vertical: KSizes.vGapMedium,
                     ),

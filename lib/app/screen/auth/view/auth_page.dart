@@ -15,8 +15,10 @@ class AuthPage extends GetView<AuthController> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => Scaffold(
-          body: Padding(
+    return Obx(
+      () => Scaffold(
+        body: SingleChildScrollView(
+          child: Padding(
             padding: EdgeInsets.all(KSizes.hGapLarge),
             child: Column(
               children: [
@@ -84,6 +86,7 @@ class AuthPage extends GetView<AuthController> {
                     ? Column(
                         children: [
                           KTextField(
+                              controller: controller.loginPilgrimController,
                               heightFactor: 50,
                               hintText: "Pilgrim ID",
                               hasPrefixIcon: true,
@@ -98,6 +101,7 @@ class AuthPage extends GetView<AuthController> {
                             height: KSizes.vGapExtraLarge,
                           ),
                           KTextField(
+                              controller: controller.loginPasswordController,
                               heightFactor: 50,
                               hintText: "Password",
                               hasPrefixIcon: true,
@@ -115,7 +119,9 @@ class AuthPage extends GetView<AuthController> {
                             btnColor: KColors.tranparent.withOpacity(0.2),
                             btnText: "Submit",
                             textColor: KColors.white,
-                            onTap: () {},
+                            onTap: () {
+                              controller.login();
+                            },
                           )
                         ],
                       )
@@ -175,6 +181,8 @@ class AuthPage extends GetView<AuthController> {
               ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

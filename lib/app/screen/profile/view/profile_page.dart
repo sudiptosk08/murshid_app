@@ -68,7 +68,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: KSizes.vGapExtraLarge,
+            height: KSizes.vGapMedium,
           ),
           Container(
             alignment: Alignment.center,
@@ -104,7 +104,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: KSizes.vGapExtraLarge,
+            height: KSizes.vGapMedium,
           ),
           Container(
             alignment: Alignment.center,
@@ -140,7 +140,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: KSizes.vGapExtraLarge,
+            height: KSizes.vGapMedium,
           ),
           Container(
             alignment: Alignment.center,
@@ -176,7 +176,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: KSizes.vGapExtraLarge,
+            height: KSizes.vGapMedium,
           ),
           Container(
             alignment: Alignment.center,
@@ -212,7 +212,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: KSizes.vGapExtraLarge,
+            height: KSizes.vGapMedium,
           ),
           Container(
             alignment: Alignment.center,
@@ -248,7 +248,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: KSizes.vGapExtraLarge,
+            height: KSizes.vGapMedium,
           ),
           Container(
             alignment: Alignment.center,
@@ -284,7 +284,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: KSizes.vGapExtraLarge,
+            height: KSizes.vGapMedium,
           ),
           Container(
             alignment: Alignment.center,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:murshid_app/routes/routes.dart';
 import 'package:murshid_app/utils/assets/k_images.dart';
 import 'package:murshid_app/utils/colors/app_colors.dart';
 import 'package:murshid_app/utils/sizes/k_sizes.dart';
@@ -11,17 +12,25 @@ class BookingCard extends StatelessWidget {
   const BookingCard({
     super.key,
     required this.index,
-    this.leftBtn,
-    this.rightBtn,
+    required this.location,
+    required this.hotelName,
+    required this.checkIn,
+    required this.checkOut,
+    required this.lat,
+    required this.long,
   });
 
   final int index;
-  final Widget? leftBtn;
-  final Widget? rightBtn;
+  final String location;
+  final String hotelName;
+  final String checkIn;
+
+  final String checkOut;
+  final String lat;
+  final String long;
 
   @override
   Widget build(BuildContext context) {
-    RxList<int> expandedIndex = <int>[].obs;
     return InkWell(
       onTap: () {
         // Get.toNamed(Routes.serviceDetailsPage);
@@ -68,30 +77,23 @@ class BookingCard extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                padding: EdgeInsets.all(KSizes.hGapSmall),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5.r),
-                                  color: KColors.mute.withOpacity(0.2),
-                                ),
-                                child: index == 2 || index == 4
-                                    ? Text(
-                                        'Mokka',
-                                        style: KTextStyles.bodyText2
-                                            .copyWith(color: KColors.white),
-                                      )
-                                    : Text(
-                                        'Madinah',
-                                        style: KTextStyles.bodyText2
-                                            .copyWith(color: KColors.white),
-                                      ),
-                              ),
+                                  padding: EdgeInsets.all(KSizes.hGapSmall),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5.r),
+                                    color: KColors.mute.withOpacity(0.2),
+                                  ),
+                                  child: Text(
+                                    location,
+                                    style: KTextStyles.bodyText2
+                                        .copyWith(color: KColors.white),
+                                  )),
                             ],
                           ),
                           SizedBox(
                             height: KSizes.vGapSmall,
                           ),
                           Text(
-                            "Al Madinah Golden",
+                            hotelName,
                             style: KTextStyles.bodyText1.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: KColors.white),
@@ -109,7 +111,7 @@ class BookingCard extends StatelessWidget {
                                 width: KSizes.hGapSmall,
                               ),
                               Text(
-                                "5 April , 2024 (Check In)",
+                                "$checkIn (Check In)",
                                 style: KTextStyles.subtitle2.copyWith(
                                   color: KColors.white,
                                   fontWeight: FontWeight.bold,
@@ -123,14 +125,14 @@ class BookingCard extends StatelessWidget {
                           Row(
                             children: [
                               const Icon(
-                                Icons.call,
+                                Icons.calendar_month,
                                 color: KColors.primaryColor,
                               ),
                               SizedBox(
                                 width: KSizes.hGapSmall,
                               ),
                               Text(
-                                "+ 96-4478-966621",
+                                "$checkOut (Check Out)",
                                 style: KTextStyles.subtitle2.copyWith(
                                   color: KColors.white,
                                   fontWeight: FontWeight.bold,
@@ -149,26 +151,32 @@ class BookingCard extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Expanded(
-                    child: CustomButton(
-                      btnColor: KColors.mute.withOpacity(0.2),
-                      iconData: Icons.view_timeline,
-                      iconColor: KColors.white,
-                      onTap: () {},
-                      btnText: "View Details",
-                      iconSize: 25,
-                      textColor: KColors.white,
-                    ),
-                  ),
-                  SizedBox(
-                    width: KSizes.hGapMedium,
-                  ),
+                  // Expanded(
+                  //   child: CustomButton(
+                  //     btnColor: KColors.mute.withOpacity(0.2),
+                  //     iconData: Icons.view_timeline,
+                  //     iconColor: KColors.white,
+                  //     onTap: () {},
+                  //     btnText: "View Details",
+                  //     iconSize: 25,
+                  //     textColor: KColors.white,
+                  //   ),
+                  // ),
+                  // SizedBox(
+                  //   width: KSizes.hGapMedium,
+                  // ),
                   Expanded(
                     child: CustomButton(
                       btnColor: KColors.mute.withOpacity(0.2),
                       iconData: Icons.location_history,
                       iconColor: KColors.white,
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(Routes.mapLocationPage, arguments: {
+                          "lat": lat,
+                          "long": long,
+                          "hotelName": hotelName.toString()
+                        });
+                      },
                       btnText: "View Direction",
                       iconSize: 26,
                       textColor: KColors.white,
